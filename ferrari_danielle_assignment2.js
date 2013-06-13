@@ -25,3 +25,23 @@ var howStrongTheyWere = function(monsters) {
 	return totalHealth;
 }
 
+var whichSpellToUse = function(spellShape, spellAction) {
+	var fullSpell = spellShape + " of " + spellAction;
+	return fullSpell;
+}
+
+var attacksTheGroup = function(totalDamage, monstersNames) {
+	var monstersCounted = 0;
+	var remainingMonsters = monstersNames;
+	var monsterJustKilled;
+	for (monstersCounted = 0; (monstersCounted * 6) < totalDamage; monstersCounted++) {
+		monsterJustKilled = remainingMonsters.pop();
+		if (monstersCounted == 0) {
+			console.log("The first casualty of the spell he cast was " + monsterJustKilled);
+		} else {
+			console.log("And then it took the life of " + monsterJustKilled + "!");
+		}
+	}
+	return remainingMonsters;
+}
+
