@@ -9,6 +9,18 @@ var startWalking = function(inForest) {
 	}
 }
 
+var makeSureHesGotMana = function(manaHeHas, manaHeNeeds) {
+	var hasHeGotIt;
+	if (manaHeHas >= manaHeNeeds) {
+		console.log("He was not afraid, however, for he had more than enough mana for his needs.");
+		hasHeGotIt = true;
+	} else {
+		console.log("He was slightly worried when this happened, for his mana supply was slightly low.");
+		hasHeGotIt = false;
+	}
+	return hasHeGotIt;
+}
+
 var howStrongTheyWere = function(monsters) {
 	var totalHealth = 0;
 	var monstersCounted = 0; 
