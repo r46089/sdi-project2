@@ -1,5 +1,9 @@
 
-/* A Mage's Quest */
+// A Mage's Quest
+
+var spellToCast; // string
+var healthToOvercome; // number
+var monstersKilled; // array
 
 var startWalking = function(inForest) {
 	if (inForest) {
@@ -21,7 +25,7 @@ var makeSureHesGotMana = function(manaHeHas, manaHeNeeds) {
 	return hasHeGotIt;
 }
 
-var howStrongTheyWere = function(monsters) {
+var assessHowStrongTheyWere = function(monsters) {
 	var totalHealth = 0;
 	var monstersCounted = 0; 
 	while (monstersCounted < monsters) {
@@ -49,7 +53,7 @@ var attacksTheGroup = function(totalDamage, monstersNames) {
 	for (monstersCounted = 0; (monstersCounted * 6) < totalDamage; monstersCounted++) {
 		monsterJustKilled = remainingMonsters.pop();
 		if (monstersCounted == 0) {
-			console.log("The first casualty of the spell he cast was " + monsterJustKilled);
+			console.log("The first casualty was " + monsterJustKilled);
 		} else {
 			console.log("And then it took the life of " + monsterJustKilled + "!");
 		}
@@ -57,3 +61,13 @@ var attacksTheGroup = function(totalDamage, monstersNames) {
 	return remainingMonsters;
 }
 
+console.log("There once was a mage who wanted to quest.");
+startWalking();
+makeSureHesGotMana(70, 35);
+console.log("Nevertheless, he pressed on. He decided to size up the situation.");
+healthToOvercome = assessHowStrongTheyWere(5);
+console.log("\"Right, so I've got to shave away " + healthToOvercome + " total 'health points',\" he concluded.");
+spellToCast = whichSpellToUse("Ball", "Flaming Death");
+console.log("\"I'd better use the " + spellToCast + " .\" And so he did.");
+monstersKilled = attacksTheGroup(35, ["Blata", "Blara", "Blana", "Blaba", "Morris"]); 
+console.log("When it was all said and done, only " + monstersKilled + " remained -- the only others to live to tell the tale.");
