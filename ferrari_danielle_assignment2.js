@@ -36,7 +36,7 @@ var assessHowStrongTheyWere = function(monsters) {
 		}
 		monstersCounted++;
 		totalHealth = totalHealth + 6;
-		console.log("\"So far, that's about " + totalHealth + " 'health points' to whittle through,\" he thought.");
+		console.log("\"So far, that's about " + totalHealth + " 'health points' to whittle away,\" he thought.");
 	}
 	return totalHealth;
 }
@@ -63,15 +63,18 @@ var attacksTheGroup = function(totalDamage, monstersNames) {
 
 console.log("There once was a mage who wanted to quest.");
 startWalking();
-makeSureHesGotMana(70, 35);
+makeSureHesGotMana(25, 35);
 console.log("Nevertheless, he pressed on. He decided to size up the situation.");
 healthToOvercome = assessHowStrongTheyWere(5);
 console.log("\"Right, so I've got to shave away " + healthToOvercome + " total 'health points',\" he concluded.");
 spellToCast = whichSpellToUse("Ball", "Flaming Death");
 console.log("\"I'd better use the " + spellToCast + " .\" And so he did.");
-monstersKilled = attacksTheGroup(24, ["Blata", "Blara", "Blana", "Blaba", "Morris"]); 
+monstersKilled = attacksTheGroup(42, ["Blata", "Blara", "Blana", "Blaba", "Morris"]); 
 if (monstersKilled.length > 1) {
-	console.log("When it was all said and done, only " + monstersKilled + " remained -- the only others to live to tell the tale.");
+	console.log("When it was all said and done, only " + monstersKilled + " remained alive and ran off -- the only others to live to tell the tale.");
+} else if (monstersKilled.length == 1) {
+	console.log("When it was all said and done, only " + monstersKilled + " remained alive and ran off -- the only one to live to tell the tale.");
 } else {
-	console.log("When it was all said and done, only " + monstersKilled + " remained -- the only one to live to tell the tale.");
+	console.log("When it was all said and done, none survived.");
 }
+console.log("And the mage continued on his journey."); 
