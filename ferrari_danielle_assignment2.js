@@ -7,9 +7,9 @@ var monstersKilled; // array
 
 var startWalking = function(inForest) {
 	if (inForest) {
-		console.log("The mage began walking through the forest, and ran into a goblin!");
+		console.log("So he began walking through the forest, and ran into a goblin!");
 	} else {
-		console.log("The mage began spelunking in a dark cavern, and came upon some bats!");
+		console.log("So he began spelunking in a dark cavern, and came upon some bats!");
 	}
 }
 
@@ -36,7 +36,7 @@ var assessHowStrongTheyWere = function(monsters) {
 		}
 		monstersCounted++;
 		totalHealth = totalHealth + 6;
-		console.log("\"So far, that's about " + totalHealth + " to whittle through,\" he thought.");
+		console.log("\"So far, that's about " + totalHealth + " 'health points' to whittle through,\" he thought.");
 	}
 	return totalHealth;
 }
@@ -53,7 +53,7 @@ var attacksTheGroup = function(totalDamage, monstersNames) {
 	for (monstersCounted = 0; (monstersCounted * 6) < totalDamage; monstersCounted++) {
 		monsterJustKilled = remainingMonsters.pop();
 		if (monstersCounted == 0) {
-			console.log("The first casualty was " + monsterJustKilled);
+			console.log("The first casualty was " + monsterJustKilled + ".");
 		} else {
 			console.log("And then it took the life of " + monsterJustKilled + "!");
 		}
@@ -69,5 +69,9 @@ healthToOvercome = assessHowStrongTheyWere(5);
 console.log("\"Right, so I've got to shave away " + healthToOvercome + " total 'health points',\" he concluded.");
 spellToCast = whichSpellToUse("Ball", "Flaming Death");
 console.log("\"I'd better use the " + spellToCast + " .\" And so he did.");
-monstersKilled = attacksTheGroup(35, ["Blata", "Blara", "Blana", "Blaba", "Morris"]); 
-console.log("When it was all said and done, only " + monstersKilled + " remained -- the only others to live to tell the tale.");
+monstersKilled = attacksTheGroup(24, ["Blata", "Blara", "Blana", "Blaba", "Morris"]); 
+if (monstersKilled.length > 1) {
+	console.log("When it was all said and done, only " + monstersKilled + " remained -- the only others to live to tell the tale.");
+} else {
+	console.log("When it was all said and done, only " + monstersKilled + " remained -- the only one to live to tell the tale.");
+}
