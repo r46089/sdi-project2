@@ -68,7 +68,7 @@ var attacksTheGroup = function(totalDamage, monstersNames) {
 
 console.log("There once was a mage who wanted to quest.");
 startWalking();
-makeSureHesGotMana(25, 35);
+makeSureHesGotMana(50,50);
 console.log("Nevertheless, he pressed on. He decided to size up the situation.");
 healthToOvercome = assessHowStrongTheyWere(5);
 console.log("\"Right, so I've got to shave away " + healthToOvercome + " total 'health points',\" he concluded.");
