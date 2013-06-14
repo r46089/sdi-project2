@@ -51,6 +51,11 @@ var attacksTheGroup = function(totalDamage, monstersNames) {
 	var remainingMonsters = monstersNames;
 	var monsterJustKilled;
 	for (monstersCounted = 0; (monstersCounted * 6) < totalDamage; monstersCounted++) {
+		if (remainingMonsters.length == 0) {
+			console.log("All of the creatures died; the rest of the spell went towards destroying the environment a little.");
+			break;
+		}
+		
 		monsterJustKilled = remainingMonsters.pop();
 		if (monstersCounted == 0) {
 			console.log("The first casualty was " + monsterJustKilled + ".");
